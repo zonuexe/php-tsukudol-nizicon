@@ -1,0 +1,28 @@
+{
+    "name": "zonuexe/tsukudol-nizicon",
+    "description": "Niji No Conquistador on PHP",
+    "license": "MIT",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "USAMI Kenta",
+            "email": "tadsan@zonu.me"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "theseer/phpdox":   "0.6.*"
+        ,"phploc/phploc":   "*"
+        ,"phpunit/phpunit": "4.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tsukudol\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tsukudol\\": "tests/"
+        }
+    }
+}
