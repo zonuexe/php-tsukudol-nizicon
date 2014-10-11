@@ -2,18 +2,21 @@
     "name": "zonuexe/tsukudol-nizicon",
     "description": "Niji No Conquistador on PHP",
     "license": "MIT",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "authors": [
         {
             "name": "USAMI Kenta",
             "email": "tadsan@zonu.me"
         }
     ],
-    "require": {},
+    "require": {
+        "zonuexe/http-accept-language": "0.*"
+    },
     "require-dev": {
         "theseer/phpdox":   "0.6.*"
         ,"phploc/phploc":   "*"
         ,"phpunit/phpunit": "4.3.*"
+        ,"slim/slim": "2.*"
     },
     "autoload": {
         "psr-4": {
