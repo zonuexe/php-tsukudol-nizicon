@@ -17,6 +17,7 @@
         ,"phploc/phploc":   "*"
         ,"phpunit/phpunit": "4.3.*"
         ,"slim/slim": "2.*"
+        ,"twig/twig": "1.*"
     },
     "autoload": {
         "psr-4": {
