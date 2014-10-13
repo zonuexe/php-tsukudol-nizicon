@@ -31,4 +31,12 @@ final class LocaleValueTest extends \Tsukudol\Nizicon\TestCase
         $this->assertEquals("ばー3", $actual->searchValue('bar', ['language' => 'ja', 'script' => 'Hira']));
         $this->assertEquals("baar!", $actual->searchValue('bar', ['language' => 'en']));
     }
+
+    public function test_renderFormat()
+    {
+        $method = self::getPrivateMethodAsPublic('\Tsukudol\LocaleValue::renderFormat');
+
+        $this->assertEquals("Foo", $method("Foo", []));
+        $this->assertEquals("\nHoge!\n", $method("\n{{ hoge }}\n", ['hoge' => "Hoge!"]));
+    }
 }

@@ -2,6 +2,7 @@
 namespace Tsukudol;
 
 use Teto\HTTP\AcceptLanguage;
+use Twig_Environment;
 
 /**
  * Abstract class of translated content
@@ -12,6 +13,9 @@ use Teto\HTTP\AcceptLanguage;
  */
 abstract class LocaleValue
 {
+    /** @var Twig_Environment */
+    private static $twig;
+
     /**
      * @param array $values
      */
@@ -102,5 +106,20 @@ abstract class LocaleValue
     public static function parseLang($lang)
     {
         return AcceptLanguage::parse($lang)[1];
+    }
+
+    /**
+     * @param  string $format
+     * @param  array  $params
+     * @return string
+     */
+    protected static function renderFormat($format, array $params)
+    {
+        if (!isset(self::$twig)) {
+            $loader = new \Twig_Loader_String();
+            self::$twig = new Twig_Environment($loader);
+        }
+
+        return self::$twig->render($format, $params);
     }
 }
