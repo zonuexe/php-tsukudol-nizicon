@@ -51,4 +51,18 @@ final class LocaleName extends LocaleValue
 
         return $given . $separator . $family;
     }
+
+    /**
+     * @return array[]
+     */
+    public function dumpNames()
+    {
+        $retval = [];
+
+        for ($n = 0; $n < count($this->family); $n++) {
+            $retval[] = [$this->family[$n][0], ['family' => $this->family[$n][1], 'given' => $this->given[$n][1]]];
+        }
+
+        return $retval;
+    }
 }

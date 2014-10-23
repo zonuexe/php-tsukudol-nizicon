@@ -25,5 +25,7 @@ final class LocaleNameTest extends \Tsukudol\Nizicon\TestCase
         $this->assertEquals("重音テト",   $actual->getNameIn('ja-Jpan'));
         $this->assertEquals("重音・テト", $actual->getNameIn('ja-Jpan', ['separator' => '・']));
         $this->assertEquals("Teto Kasane", $actual->getNameIn('en'));
+
+        $this->assertEquals($src, $actual->dumpNames());
     }
 }
