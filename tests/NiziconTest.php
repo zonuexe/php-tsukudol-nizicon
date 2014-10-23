@@ -3,16 +3,30 @@ namespace Tsukudol;
 
 class NiziconTest extends \Tsukudol\Nizicon\TestCase
 {
-    public function test_find()
+    /**
+     * @dataProvider memberNameProvider
+     */
+    public function test_member($name)
     {
-        $minarin = Nizicon::member("長田 美成");
+        $member = Nizicon::member($name);
 
-        $this->assertInternalType("string", $minarin->name);
-        $this->assertInstanceOf('\DateTimeImmutable', $minarin->birth_day);
+        $this->assertInstanceOf('\Tsukudol\LocaleName', $member->names);
+        $this->assertInstanceOf('\DateTimeImmutable', $member->birth_day);
     }
 
-    public function test_list()
+    public function memberNameProvider()
     {
-        $this->assertContainsOnlyInstancesOf('\Tsukudol\Nizicon\Member', Nizicon::members());
+        return [
+            ['長田'],
+            ['凪'],
+        ];
+    }
+
+    public function test_members()
+    {
+        $actual = Nizicon::members();
+
+        $this->assertContainsOnlyInstancesOf('\Tsukudol\Nizicon\Member', $actual);
+        $this->assertCount(10, $actual);
     }
 }

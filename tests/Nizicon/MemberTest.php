@@ -7,9 +7,15 @@ class MemberTest extends \Tsukudol\Nizicon\TestCase
     {
         $minarin = Member::find("長田 美成");
 
-        $this->assertEquals("長田 美成", $minarin->name);
+        $expected_minarin_name = [
+            ['ja-Jpan', ['family' => "長田", "given" => "美成"]],
+            ['ja-Hira', ['family' => "ながた", "given" => "みなり"]],
+            ['en-Latn', ['family' => "Nagata", "given" => "Minari"]],
+        ];
+
+        $this->assertEquals($expected_minarin_name, $minarin->names->dumpNames());
         $this->assertEquals(\DateTimeImmutable::createFromFormat("Y-m-d", "1997-12-17"), $minarin->birth_day);
-        $this->assertEquals("nagata_minari", $minarin->twitter);
+        $this->assertEquals(2653040568, $minarin->twitter);
         $this->assertNull($minarin->pixiv);
     }
 
