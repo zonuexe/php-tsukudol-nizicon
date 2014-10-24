@@ -1,7 +1,7 @@
 Tsukudol::Nizicon
 =================
 
-[![Build Status](https://travis-ci.org/zonuexe/php-tsukudol-nizicon.svg?branch=v0.2.0)](https://travis-ci.org/zonuexe/php-tsukudol-nizicon)
+[![Build Status](https://travis-ci.org/zonuexe/php-tsukudol-nizicon.svg)](https://travis-ci.org/zonuexe/php-tsukudol-nizicon)
 [![Downloads this Month](https://img.shields.io/packagist/dm/zonuexe/tsukudol-nizicon.svg)](https://packagist.org/packages/zonuexe/tsukudol-nizicon)
 
 Description
@@ -24,7 +24,7 @@ use Tsukudol\Nizicon;
 
 array_map(
     function ($member) {
-        echo $member->name;
+        echo $member->name . PHP_EOL;
     },
     Nizicon::members()
 );
