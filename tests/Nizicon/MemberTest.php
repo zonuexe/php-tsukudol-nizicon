@@ -1,6 +1,8 @@
 <?php
 namespace Tsukudol\Nizicon;
 
+use Tsukudol\TwitterAccount;
+
 class MemberTest extends \Tsukudol\Nizicon\TestCase
 {
     public function test_find()
@@ -12,10 +14,11 @@ class MemberTest extends \Tsukudol\Nizicon\TestCase
             ['ja-Hira', ['family' => "ながた", "given" => "みなり"]],
             ['en-Latn', ['family' => "Nagata", "given" => "Minari"]],
         ];
+        $expected_birthday = \DateTimeImmutable::createFromFormat(\DateTime::W3C, "1997-12-17T00:00:00+09:00");
 
         $this->assertEquals($expected_minarin_name, $minarin->names->dumpNames());
-        $this->assertEquals(\DateTimeImmutable::createFromFormat("Y-m-d", "1997-12-17"), $minarin->birth_day);
-        $this->assertEquals(2653040568, $minarin->twitter);
+        $this->assertEquals($expected_birthday, $minarin->birth_day);
+        $this->assertEquals(new TwitterAccount('2653040568', 'nagata_minari'), $minarin->twitter);
         $this->assertNull($minarin->pixiv);
     }
 

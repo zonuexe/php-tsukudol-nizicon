@@ -10,9 +10,7 @@ namespace Tsukudol;
  */
 final class Nizicon
 {
-    private function __constructor()
-    {
-    }
+    private function __constructor(){}
 
     /**
      * @param  $name

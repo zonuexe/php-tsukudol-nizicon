@@ -1,6 +1,9 @@
 <?php
 namespace Tsukudol\Nizicon;
-use \Tsukudol\LocaleName;
+use Tsukudol\LocaleName;
+use Tsukudol\LocaleNickname;
+use Tsukudol\TwitterAccount;
+use Tsukudol\pixivAccount;
 
 /**
  * Member of Niji No Conquistador
@@ -8,6 +11,13 @@ use \Tsukudol\LocaleName;
  * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
+ *
+ * @property-read LocaleName         $names
+ * @property-read LocaleNickname     $nick_names
+ * @property-read \DateTimeImmutable $birth_day
+ * @property-read string[]           $calls
+ * @property-read TwitterAccount     $twitter
+ * @property-read pixivAccount       $pixiv
  */
 final class Member
 {
@@ -20,7 +30,7 @@ final class Member
     /** @var LocaleName */
     private $names;
 
-    /** @var string[] */
+    /** @var LocaleNickname */
     private $nick_names;
 
     /** @var \DateTimeImmutable */
@@ -29,25 +39,25 @@ final class Member
     /** @var string[] */
     private $calls;
 
-    /** @var string */
+    /** @var \Tsukudol\TwitterAccount */
     private $twitter;
 
-    /** @var string */
+    /** @var \Tsukudol\pixivAccount */
     private $pixiv;
 
     /**
-     * @param string      $names
-     * @param string[]    $nick_names
-     * @param string      $birth_day
-     * @param int         $twitter
-     * @param string[]    $calls
-     * @param string|null $pixiv
+     * @param LocaleName        $names
+     * @param LocaleNickname    $nick_names
+     * @param string            $birth_day
+     * @param TwitterAccount    $twitter
+     * @param string[]          $calls
+     * @param pixivAccount|null $pixiv
      */
     private function __construct(array $names, array $nick_names, $birth_day, array $calls, $twitter, $pixiv)
     {
         $this->names      = new LocaleName($names);
-        $this->nick_names = $nick_names;
-        $this->birth_day  = \DateTimeImmutable::createFromFormat('Y-m-d', $birth_day);
+        $this->nick_names = new LocaleNickname($nick_names);
+        $this->birth_day  = \DateTimeImmutable::createFromFormat(\DateTime::W3C, $birth_day.'T00:00:00+09:00');
         $this->calls      = $calls;
         $this->twitter    = $twitter;
         $this->pixiv      = $pixiv;
@@ -94,13 +104,13 @@ final class Member
                         ['en-Latn', ['family' => 'Nagata', 'given' => 'Minari']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'みなりん']],
+                        ['ja-Jpan', ['nick_name' => 'みなりん']],
                     ],
                     '1997-12-17',
                     [
                         ['lang' => 'ja-Jpan', ]
                     ],
-                    2653040568,
+                    new TwitterAccount('2653040568', 'nagata_minari'),
                     null
                 ),
                 new Member(
@@ -110,11 +120,11 @@ final class Member
                         ['en-Latn', ['family' => 'Nagata',  'given' => 'Minari']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'しげちー']],
+                        ['ja-Jpan', ['nick_name' => 'しげちー']],
                     ],
                     '1996-05-20',
                     [],
-                    2653112936,
+                    new TwitterAccount('2653112936', 'shigematsu_yuka'),
                     null
                 ),
                 new Member(
@@ -124,11 +134,11 @@ final class Member
                         ['en-Latn', ['family' => 'Okumura',  'given' => 'Nonoka']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'ののた']]
+                        ['ja-Jpan', ['nick_name' => 'ののた']]
                     ],
                     '2001-01-04',
                     [],
-                    2653101776,
+                    new TwitterAccount('2653101776', 'okumura_nonoka'),
                     null
                 ),
                 new Member(
@@ -138,11 +148,11 @@ final class Member
                         ['en-Latn', ['family' => 'Kinoshita', 'given' => 'Hiyori']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'ひよりん']]
+                        ['ja-Jpan', ['nick_name' => 'ひよりん']]
                     ],
                     '1997-12-09',
                     [],
-                    2653072658,
+                    new TwitterAccount('2653072658', 'kinosita_hiyori'),
                     null
                 ),
                 new Member(
@@ -152,25 +162,25 @@ final class Member
                         ['en-Latn', ['family' => 'Suyama', 'given' => 'Emiri']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'えみりぃ']],
+                        ['ja-Jpan', ['nick_name' => 'えみりぃ']],
                     ],
                     '1999-05-26',
                     [],
-                    2653083494,
+                    new TwitterAccount('2653083494', 'suyama_emiri'),
                     null
                 ),
                 new Member(
                     [
                         ['ja-Jpan', ['family' => '中村',     'given' => '朱里']],
-                        ['ja-Hira', ['family' => 'なかやま', 'given' => 'あかり']],
-                        ['en-Latn', ['family' => 'Nakayama', 'given' => 'Akari']],
+                        ['ja-Hira', ['family' => 'なかむら', 'given' => 'あかり']],
+                        ['en-Latn', ['family' => 'Nakamura', 'given' => 'Akari']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'あかりん']],
+                        ['ja-Jpan', ['nick_name' => 'あかりん']],
                     ],
                     '1998-01-30',
                     [],
-                    2653083494,
+                    new TwitterAccount('2653083494', 'nakamura_akari'),
                     null
                 ),
                 new Member(
@@ -180,11 +190,11 @@ final class Member
                         ['en-Latn', ['family' => 'Nishi', 'given' => 'Nanami']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'ななぴ']]
+                        ['ja-Jpan', ['nick_name' => 'ななぴ']]
                     ],
                     '1996-10-09',
                     [],
-                    2653106774,
+                    new TwitterAccount('2653106774', 'nishi_nanami'),
                     null
                 ),
                 new Member(
@@ -194,12 +204,12 @@ final class Member
                         ['en-Latn', ['family' => 'Nemoto', 'given' => 'Nagi']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'ねも']],
+                        ['ja-Jpan', ['nick_name' => 'ねも']],
                     ],
                     '1999-03-15',
                     [],
-                    2653091701,
-                    11797412
+                    new TwitterAccount('2653091701', 'nemoto_nagi'),
+                    new pixivAccount(11797412, 'nemoto_nagi')
                 ),
                 new Member(
                     [
@@ -208,12 +218,12 @@ final class Member
                         ['en-Latn', ['family' => 'Matoba', 'given' => 'Karin']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'かりんさま']],
-                        ['ja-Jpan', ['nickname' => 'かりん']],
+                        ['ja-Jpan', ['nick_name' => 'かりんさま']],
+                        ['ja-Jpan', ['nick_name' => 'かりん']],
                     ],
                     '2000-12-30',
                     [],
-                    2653077656,
+                    new TwitterAccount('2653077656', 'matoba_karin'),
                     null
                 ),
                 new Member(
@@ -223,11 +233,11 @@ final class Member
                         ['en-Latn', ['family' => 'Yoshimura', 'given' => 'Nana']],
                     ],
                     [
-                        ['ja-Jpan', ['nickname' => 'なぁな']],
+                        ['ja-Jpan', ['nick_name' => 'なぁな']],
                     ],
                     '1999-08-02',
                     [],
-                    2653087986,
+                    new TwitterAccount('2653087986', 'yoshimura_nana'),
                     null
                 ),
             ];

@@ -10,8 +10,17 @@ class NiziconTest extends \Tsukudol\Nizicon\TestCase
     {
         $member = Nizicon::member($name);
 
-        $this->assertInstanceOf('\Tsukudol\LocaleName', $member->names);
-        $this->assertInstanceOf('\DateTimeImmutable', $member->birth_day);
+        $this->assertInstanceOf('\Tsukudol\LocaleName',     $member->names);
+        $this->assertInstanceOf('\Tsukudol\LocaleNickName', $member->nick_names);
+        $this->assertInstanceOf('\DateTimeImmutable',       $member->birth_day);
+        $this->assertInternalType('array',                  $member->calls);
+        $this->assertInstanceOf('\Tsukudol\TwitterAccount', $member->twitter);
+
+        if ($member->pixiv) {
+            $this->assertInstanceOf('\Tsukudol\pixivAccount', $member->pixiv);
+        } else {
+            $this->assertNull($member->pixiv);
+        }
     }
 
     public function memberNameProvider()
