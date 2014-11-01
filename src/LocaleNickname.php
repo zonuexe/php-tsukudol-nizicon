@@ -9,6 +9,8 @@ use Teto\HTTP\AcceptLanguage;
  * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
+ *
+ * @property-read array $nick_name
  */
 final class LocaleNickname extends LocaleValue
 {
@@ -29,5 +31,19 @@ final class LocaleNickname extends LocaleValue
         $tag = self::parseLang($lang_str);
 
         return $this->searchValue('nick_name', $tag);
+    }
+
+    /**
+     * @return array[]
+     */
+    public function dumpNames()
+    {
+        $retval = [];
+
+        foreach ($this->nick_name as $nick_name) {
+            $retval[] = [$nick_name[0], ['nick_name' => $nick_name[1]]];
+        }
+
+        return $retval;
     }
 }

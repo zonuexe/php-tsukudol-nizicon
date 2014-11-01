@@ -35,7 +35,13 @@ class NiziconTest extends \Tsukudol\Nizicon\TestCase
     {
         $actual = Nizicon::members();
 
-        $this->assertContainsOnlyInstancesOf('\Tsukudol\Nizicon\Member', $actual);
+        $this->assertInstanceOf('\Tsukudol\Nizicon', $actual);
+        $this->assertContainsOnlyInstancesOf('\Tsukudol\Nizicon\Member', $actual->getIterator());
+
+        foreach ($actual as $member) {
+            $this->assertInstanceOf('\Tsukudol\Nizicon\Member', $member);
+        }
+
         $this->assertCount(10, $actual);
     }
 }

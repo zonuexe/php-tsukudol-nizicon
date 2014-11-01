@@ -1,6 +1,8 @@
 <?php
 namespace Tsukudol;
 
+use Tsukudol\Nizicon;
+
 /**
  * Niji No Conquistador
  *
@@ -8,8 +10,11 @@ namespace Tsukudol;
  * @author  tadsan@zonu.me
  * @license MIT
  */
-final class Nizicon
+final class Nizicon implements \Countable, \IteratorAggregate
 {
+    /** @var Nizicon */
+    private static $instance;
+
     private function __constructor(){}
 
     /**
@@ -18,7 +23,7 @@ final class Nizicon
      */
     public static function member($name)
     {
-        return \Tsukudol\Nizicon\Member::find($name);
+        return Nizicon\Member::find($name);
     }
 
     /**
@@ -26,6 +31,26 @@ final class Nizicon
      */
     public static function members()
     {
-        return \Tsukudol\Nizicon\Member::getList();
+        if (empty(self::$instance)) {
+            self::$instance = new self;
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * @return \ArrayIterator
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator(Nizicon\Member::getList());
+    }
+
+    /**
+     * @return int
+     */
+    public function count()
+    {
+        return count(Nizicon\Member::getList());
     }
 }

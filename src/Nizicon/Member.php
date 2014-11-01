@@ -19,7 +19,7 @@ use Tsukudol\pixivAccount;
  * @property-read TwitterAccount     $twitter
  * @property-read pixivAccount       $pixiv
  */
-final class Member
+class Member
 {
     /**
      * @var  Member[]
@@ -74,8 +74,16 @@ final class Member
      */
     public function isMyName($search_name)
     {
+        if ($this->twitter && $search_name === $this->twitter->screen_name) {
+            return true;
+        }
+
+        if ($this->pixiv && $search_name === $this->pixiv->account) {
+            return true;
+        }
+
         foreach ($this->names->dumpNames() as $lang_name) {
-            list($lang, $name) = $lang_name;
+            list($_lang, $name) = $lang_name;
 
             if (false
               || $search_name === $name['given']
@@ -83,6 +91,14 @@ final class Member
               || $search_name === $name['family'].$name['given']
               || $search_name === $name['given'].$name['family']
             ) {
+                return true;
+            }
+        }
+
+        foreach ($this->nick_names->dumpNames() as $lang_name) {
+            list($_lang, $name) = $lang_name;
+
+            if ($search_name === $name['nick_name']) {
                 return true;
             }
         }
@@ -253,7 +269,7 @@ final class Member
     {
         self::init();
 
-        $normalized = str_replace(['', ' ', "\n", "\r", "\t"], '', $name);
+        $normalized = str_replace(['', ' ', "\n", "\r", "\t", '@'], '', $name);
 
         foreach (self::$members as $member) {
             if ($member->isMyName($normalized)) {

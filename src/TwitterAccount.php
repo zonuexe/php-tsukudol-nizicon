@@ -7,6 +7,9 @@ namespace Tsukudol;
  * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
+ *
+ * @property-read string $user_id
+ * @property-read string $screen_name
  */
 class TwitterAccount
 {

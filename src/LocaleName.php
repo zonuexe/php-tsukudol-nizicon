@@ -9,6 +9,9 @@ use Teto\HTTP\AcceptLanguage;
  * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
+ *
+ * @property-read array $family
+ * @property-read array $given
  */
 final class LocaleName extends LocaleValue
 {

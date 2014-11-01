@@ -7,6 +7,9 @@ namespace Tsukudol;
  * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
+ *
+ * @property-read int    $id
+ * @property-read string $account
  */
 class pixivAccount
 {
