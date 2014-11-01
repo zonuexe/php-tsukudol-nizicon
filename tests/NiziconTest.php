@@ -42,6 +42,6 @@ class NiziconTest extends \Tsukudol\Nizicon\TestCase
             $this->assertInstanceOf('\Tsukudol\Nizicon\Member', $member);
         }
 
-        $this->assertCount(10, $actual);
+        $this->assertCount(11, $actual);
     }
 }

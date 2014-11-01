@@ -133,7 +133,7 @@ class Member
                     [
                         ['ja-Jpan', ['family' => '重松',     'given' => '佑佳']],
                         ['ja-Hira', ['family' => 'しげまつ', 'given' => 'ゆか']],
-                        ['en-Latn', ['family' => 'Nagata',  'given' => 'Minari']],
+                        ['en-Latn', ['family' => 'Nagata',   'given' => 'Minari']],
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'しげちー']],
@@ -217,7 +217,7 @@ class Member
                     [
                         ['ja-Jpan', ['family' => '根本',    'given' => '凪']],
                         ['ja-Hira', ['family' => 'ねもと',  'given' => 'なぎ']],
-                        ['en-Latn', ['family' => 'Nemoto', 'given' => 'Nagi']],
+                        ['en-Latn', ['family' => 'Nemoto',  'given' => 'Nagi']],
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'ねも']],
@@ -254,6 +254,20 @@ class Member
                     '1999-08-02',
                     [],
                     new TwitterAccount('2653087986', 'yoshimura_nana'),
+                    null
+                ),
+                new Member(
+                    [
+                        ['ja-Jpan', ['family' => '鶴見',     'given' => '萌']],
+                        ['ja-Hira', ['family' => 'つるみ',   'given' => 'もえ']],
+                        ['en-Latn', ['family' => 'Tsurumi',  'given' => 'Moe']],
+                    ],
+                    [
+                        ['ja-Jpan', ['nick_name' => 'もえ']]
+                    ],
+                    '1996-12-05',
+                    [],
+                    new TwitterAccount('2795582286', 'tsurumi_moe'),
                     null
                 ),
             ];
