@@ -61,8 +61,8 @@ class pixivAccount
     /**
      * @return string
      */
-    public function getUrlAsShort()
+    public function getUrlAsShort($with_scheme = true)
     {
-        return 'http://pixiv.me/' . $this->account;
+        return ($with_scheme ? 'http://' : '') . 'pixiv.me/' . $this->account;
     }
 }

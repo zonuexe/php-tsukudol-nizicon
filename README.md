@@ -17,14 +17,14 @@ Requirements
 Usage
 -----
 
-```
+```php
 <?php
 
 use Tsukudol\Nizicon;
 
 array_map(
     function ($member) {
-        echo $member->name . PHP_EOL;
+        echo $member->names->getNameIn('en') . PHP_EOL;
     },
     Nizicon::members()
 );
