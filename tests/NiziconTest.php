@@ -3,6 +3,8 @@ namespace Tsukudol;
 
 class NiziconTest extends \Tsukudol\Nizicon\TestCase
 {
+    const RE_URL_PATTERN = '@\Ahttp://.+@';
+
     /**
      * @dataProvider memberNameProvider
      */
@@ -15,6 +17,12 @@ class NiziconTest extends \Tsukudol\Nizicon\TestCase
         $this->assertInstanceOf('\DateTimeImmutable',       $member->birth_day);
         $this->assertInternalType('array',                  $member->calls);
         $this->assertInstanceOf('\Tsukudol\TwitterAccount', $member->twitter);
+
+        $this->assertRegExp(self::RE_URL_PATTERN, $member->blog_url);
+        $this->assertNotEmpty($member->head_shot_urls);
+        foreach ($member->head_shot_urls as $url) {
+            $this->assertRegExp(self::RE_URL_PATTERN, $url);
+        }
 
         if ($member->pixiv) {
             $this->assertInstanceOf('\Tsukudol\pixivAccount', $member->pixiv);

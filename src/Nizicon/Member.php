@@ -16,6 +16,8 @@ use Tsukudol\pixivAccount;
  * @property-read LocaleNickname     $nick_names
  * @property-read \DateTimeImmutable $birth_day
  * @property-read string[]           $calls
+ * @property-read string             $blog_url
+ * @property-read string[]           $head_shot_url
  * @property-read TwitterAccount     $twitter
  * @property-read pixivAccount       $pixiv
  */
@@ -39,6 +41,12 @@ class Member
     /** @var string[] */
     private $calls;
 
+    /** @var string */
+    private $blog_url;
+
+    /** @var string[] */
+    private $head_shot_urls;
+
     /** @var \Tsukudol\TwitterAccount */
     private $twitter;
 
@@ -53,12 +61,22 @@ class Member
      * @param string[]          $calls
      * @param pixivAccount|null $pixiv
      */
-    private function __construct(array $names, array $nick_names, $birth_day, array $calls, $twitter, $pixiv)
-    {
+    private function __construct(
+        array $names,
+        array $nick_names,
+        $birth_day,
+        array $calls,
+        $blog_url,
+        array $head_shot_urls,
+        $twitter,
+        $pixiv
+    ) {
         $this->names      = new LocaleName($names);
         $this->nick_names = new LocaleNickname($nick_names);
         $this->birth_day  = \DateTimeImmutable::createFromFormat(\DateTime::W3C, $birth_day.'T00:00:00+09:00');
         $this->calls      = $calls;
+        $this->blog_url   = $blog_url;
+        $this->head_shot_urls = $head_shot_urls;
         $this->twitter    = $twitter;
         $this->pixiv      = $pixiv;
     }
@@ -126,6 +144,8 @@ class Member
                     [
                         ['lang' => 'ja-Jpan', ]
                     ],
+                    'http://ameblo.jp/2zicon/theme-10083290600.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/nagata-600x620.jpg'],
                     new TwitterAccount('2653040568', 'nagata_minari'),
                     null
                 ),
@@ -140,6 +160,8 @@ class Member
                     ],
                     '1996-05-20',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290705.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/shigematsu-600x620.jpg'],
                     new TwitterAccount('2653112936', 'shigematsu_yuka'),
                     null
                 ),
@@ -154,6 +176,8 @@ class Member
                     ],
                     '2001-01-04',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290716.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/okumura-600x620.jpg'],
                     new TwitterAccount('2653101776', 'okumura_nonoka'),
                     null
                 ),
@@ -168,6 +192,8 @@ class Member
                     ],
                     '1997-12-09',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290721.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/kinoshita-600x620.jpg'],
                     new TwitterAccount('2653072658', 'kinosita_hiyori'),
                     null
                 ),
@@ -182,6 +208,8 @@ class Member
                     ],
                     '1999-05-26',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290724.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/suyama-600x620.jpg'],
                     new TwitterAccount('2653083494', 'suyama_emiri'),
                     null
                 ),
@@ -196,6 +224,8 @@ class Member
                     ],
                     '1998-01-30',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290728.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/nakamura-600x620.jpg'],
                     new TwitterAccount('2653083494', 'nakamura_akari'),
                     null
                 ),
@@ -210,6 +240,8 @@ class Member
                     ],
                     '1996-10-09',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290730.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/nishi-600x620.jpg'],
                     new TwitterAccount('2653106774', 'nishi_nanami'),
                     null
                 ),
@@ -224,6 +256,8 @@ class Member
                     ],
                     '1999-03-15',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290733.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/nemoto-600x620.jpg'],
                     new TwitterAccount('2653091701', 'nemoto_nagi'),
                     new pixivAccount(11797412, 'nemoto_nagi')
                 ),
@@ -239,6 +273,8 @@ class Member
                     ],
                     '2000-12-30',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290734.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/matoba-600x620.jpg'],
                     new TwitterAccount('2653077656', 'matoba_karin'),
                     null
                 ),
@@ -253,6 +289,8 @@ class Member
                     ],
                     '1999-08-02',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10083290737.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/yoshimura-600x620.jpg'],
                     new TwitterAccount('2653087986', 'yoshimura_nana'),
                     null
                 ),
@@ -267,6 +305,8 @@ class Member
                     ],
                     '1996-12-05',
                     [],
+                    'http://ameblo.jp/2zicon/theme-10085711755.html',
+                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/09/tsurumi-600x620.jpg'],
                     new TwitterAccount('2795582286', 'tsurumi_moe'),
                     null
                 ),

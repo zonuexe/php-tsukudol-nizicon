@@ -59,7 +59,8 @@ $ruby_name = function (Nizicon\Member $member) {
 
 foreach (Nizicon::members() as $member): ?>
 <article class="member" id="<?= h($member->twitter->screen_name) ?>">
-<h1><?= $ruby_name($member) ?> as <?= $member->nick_names->getNameIn($lang_tag) ?></h1>
+<h1><?= $ruby_name($member) ?> as <a href="<?= h($member->blog_url) ?>"><?= $member->nick_names->getNameIn($lang_tag) ?></a></h1>
+<img src="<?= h($member->head_shot_urls[0]) ?>">
 <dl>
     <dt>Twitter</dt>
     <dd>@<a href="<?= h($member->twitter->getUrlAsShort()) ?>"><?= h($member->twitter->screen_name) ?></a></dd>
