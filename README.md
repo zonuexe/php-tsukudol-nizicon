@@ -9,6 +9,9 @@ Description
 
 *Niji No Conquistador* (虹のコンキスタドール) implementation on PHP.
 
+* Perl: [Acme-2zicon - metacpan.org](https://metacpan.org/release/Acme-2zicon) (GitHub: [catatsuy/acme-2zicon](https://github.com/catatsuy/acme-2zicon))
+* Ruby: [rzicon - RubyGems.org](https://rubygems.org/gems/rzicon) (GitHub: [bash0C7/rzicon](https://github.com/bash0C7/rzicon))
+
 Requirements
 ------------
 
