@@ -1,8 +1,8 @@
-Tsukudol::Nizicon
-=================
+Tsukudol\Nizicon
+================
 
 [![Build Status](https://travis-ci.org/zonuexe/php-tsukudol-nizicon.svg)](https://travis-ci.org/zonuexe/php-tsukudol-nizicon)
-[![Downloads this Month](https://img.shields.io/packagist/dm/zonuexe/tsukudol-nizicon.svg)](https://packagist.org/packages/zonuexe/tsukudol-nizicon)
+[![Downloads this Month](https://img.shields.io/packagist/dm/zonuexe/tsukudol-nizicon.svg?style=flat)](https://packagist.org/packages/zonuexe/tsukudol-nizicon)
 
 Description
 -----------
