@@ -141,6 +141,7 @@ class Member
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'みなりん']],
+                        ['en-Latn', ['nick_name' => 'Minarin']],
                     ],
                     '1997-12-17',
                     [
@@ -159,6 +160,7 @@ class Member
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'しげちー']],
+                        ['en-Latn', ['nick_name' => 'Shigechi']],
                     ],
                     '1996-05-20',
                     [],
@@ -174,7 +176,8 @@ class Member
                         ['en-Latn', ['family' => 'Okumura',  'given' => 'Nonoka']],
                     ],
                     [
-                        ['ja-Jpan', ['nick_name' => 'ののた']]
+                        ['ja-Jpan', ['nick_name' => 'ののた']],
+                        ['en-Latn', ['nick_name' => 'Nonota']],
                     ],
                     '2001-01-04',
                     [],
@@ -190,7 +193,8 @@ class Member
                         ['en-Latn', ['family' => 'Kinoshita', 'given' => 'Hiyori']],
                     ],
                     [
-                        ['ja-Jpan', ['nick_name' => 'ひよりん']]
+                        ['ja-Jpan', ['nick_name' => 'ひよりん']],
+                        ['en-Latn', ['nick_name' => 'Hiyorin']],
                     ],
                     '1997-12-09',
                     [],
@@ -207,6 +211,7 @@ class Member
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'えみりぃ']],
+                        ['en-Latn', ['nick_name' => 'Emirii']],
                     ],
                     '1999-05-26',
                     [],
@@ -223,6 +228,7 @@ class Member
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'あかりん']],
+                        ['en-Latn', ['nick_name' => 'Akarin']],
                     ],
                     '1998-01-30',
                     [],
@@ -238,7 +244,8 @@ class Member
                         ['en-Latn', ['family' => 'Nishi', 'given' => 'Nanami']],
                     ],
                     [
-                        ['ja-Jpan', ['nick_name' => 'ななぴ']]
+                        ['ja-Jpan', ['nick_name' => 'ななぴ']],
+                        ['en-Latn', ['nick_name' => 'Nanapi']],
                     ],
                     '1996-10-09',
                     [],
@@ -255,6 +262,7 @@ class Member
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'ねも']],
+                        ['en-Latn', ['nick_name' => 'Nemo']],
                     ],
                     '1999-03-15',
                     [],
@@ -272,6 +280,8 @@ class Member
                     [
                         ['ja-Jpan', ['nick_name' => 'かりんさま']],
                         ['ja-Jpan', ['nick_name' => 'かりん']],
+                        ['en-Latn', ['nick_name' => 'Karinsama']],
+                        ['en-Latn', ['nick_name' => 'Karin']],
                     ],
                     '2000-12-30',
                     [],
@@ -288,6 +298,7 @@ class Member
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'なぁな']],
+                        ['en-Latn', ['nick_name' => 'Naana']],
                     ],
                     '1999-08-02',
                     [],
@@ -303,7 +314,8 @@ class Member
                         ['en-Latn', ['family' => 'Tsurumi',  'given' => 'Moe']],
                     ],
                     [
-                        ['ja-Jpan', ['nick_name' => 'もえ']]
+                        ['ja-Jpan', ['nick_name' => 'もえ']],
+                        ['en-Latn', ['nick_name' => 'Moe']],
                     ],
                     '1996-12-05',
                     [],
