@@ -94,22 +94,21 @@ class Member
      */
     public function isMyName($search_name)
     {
-        if ($this->twitter && $search_name === $this->twitter->screen_name) {
+        if ($this->twitter && strcasecmp($search_name, $this->twitter->screen_name) === 0 ) {
             return true;
         }
 
-        if ($this->pixiv && $search_name === $this->pixiv->account) {
+        if ($this->pixiv && strcasecmp($search_name, $this->pixiv->account) === 0) {
             return true;
         }
 
         foreach ($this->names->dumpNames() as $lang_name) {
             list($_lang, $name) = $lang_name;
 
-            if (false
-              || $search_name === $name['given']
-              || $search_name === $name['family']
-              || $search_name === $name['family'].$name['given']
-              || $search_name === $name['given'].$name['family']
+            if (strcasecmp($search_name, $name['given']) === 0 ||
+                strcasecmp($search_name, $name['family']) === 0 ||
+                strcasecmp($search_name, $name['family'].$name['given']) === 0 ||
+                strcasecmp($search_name, $name['given'].$name['family']) === 0
             ) {
                 return true;
             }
@@ -118,7 +117,7 @@ class Member
         foreach ($this->nick_names->dumpNames() as $lang_name) {
             list($_lang, $name) = $lang_name;
 
-            if ($search_name === $name['nick_name']) {
+            if (strcasecmp($search_name, $name['nick_name']) === 0) {
                 return true;
             }
         }

@@ -21,6 +21,8 @@ class MemberTest extends \Tsukudol\Nizicon\TestCase
         $this->assertEquals(new TwitterAccount('2653040568', 'nagata_minari'), $minarin->twitter);
         $this->assertNull($minarin->pixiv);
 
+        $this->assertTrue($minarin->isMyName('Minarin'));
+        $this->assertTrue($minarin->isMyName('minarin'));
         $this->assertTrue($minarin->isMyName('みなり'));
         $this->assertTrue($minarin->isMyName('みなりん'));
         $this->assertTrue($minarin->isMyName('nagata_minari'));
