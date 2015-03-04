@@ -54,11 +54,13 @@ class Member
     private $pixiv;
 
     /**
-     * @param LocaleName        $names
-     * @param LocaleNickname    $nick_names
+     * @param LocaleName[]      $names
+     * @param LocaleNickname[]  $nick_names
      * @param string            $birth_day
      * @param TwitterAccount    $twitter
      * @param string[]          $calls
+     * @param string            $blog_url
+     * @param string[]          $head_shot_urls
      * @param pixivAccount|null $pixiv
      */
     private function __construct(
@@ -153,7 +155,7 @@ class Member
                     [
                         ['ja-Jpan', ['family' => '重松',     'given' => '佑佳']],
                         ['ja-Hira', ['family' => 'しげまつ', 'given' => 'ゆか']],
-                        ['en-Latn', ['family' => 'Nagata',   'given' => 'Minari']],
+                        ['en-Latn', ['family' => 'Shigematsu',   'given' => 'Yuka']],
                     ],
                     [
                         ['ja-Jpan', ['nick_name' => 'しげちー']],
