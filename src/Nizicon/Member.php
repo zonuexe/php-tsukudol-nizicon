@@ -134,25 +134,6 @@ class Member
             self::$members = [
                 new Member(
                     [
-                        ['ja-Jpan', ['family' => '長田',   'given' => '美成']],
-                        ['ja-Hira', ['family' => 'ながた', 'given' => 'みなり']],
-                        ['en-Latn', ['family' => 'Nagata', 'given' => 'Minari']],
-                    ],
-                    [
-                        ['ja-Jpan', ['nick_name' => 'みなりん']],
-                        ['en-Latn', ['nick_name' => 'Minarin']],
-                    ],
-                    '1997-12-17',
-                    [
-                        ['lang' => 'ja-Jpan', ]
-                    ],
-                    'http://ameblo.jp/2zicon/theme-10083290600.html',
-                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/nagata-600x620.jpg'],
-                    new TwitterAccount('2653040568', 'nagata_minari'),
-                    null
-                ),
-                new Member(
-                    [
                         ['ja-Jpan', ['family' => '重松',     'given' => '佑佳']],
                         ['ja-Hira', ['family' => 'しげまつ', 'given' => 'ゆか']],
                         ['en-Latn', ['family' => 'Shigematsu',   'given' => 'Yuka']],
@@ -183,23 +164,6 @@ class Member
                     'http://ameblo.jp/2zicon/theme-10083290716.html',
                     ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/okumura-600x620.jpg'],
                     new TwitterAccount('2653101776', 'okumura_nonoka'),
-                    null
-                ),
-                new Member(
-                    [
-                        ['ja-Jpan', ['family' => '木下',      'given' => 'ひより']],
-                        ['ja-Hira', ['family' => 'きのした',  'given' => 'ひより']],
-                        ['en-Latn', ['family' => 'Kinoshita', 'given' => 'Hiyori']],
-                    ],
-                    [
-                        ['ja-Jpan', ['nick_name' => 'ひよりん']],
-                        ['en-Latn', ['nick_name' => 'Hiyorin']],
-                    ],
-                    '1997-12-09',
-                    [],
-                    'http://ameblo.jp/2zicon/theme-10083290721.html',
-                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/kinoshita-600x620.jpg'],
-                    new TwitterAccount('2653072658', 'kinosita_hiyori'),
                     null
                 ),
                 new Member(
@@ -238,23 +202,6 @@ class Member
                 ),
                 new Member(
                     [
-                        ['ja-Jpan', ['family' => '西',    'given' => '七海']],
-                        ['ja-Hira', ['family' => 'にし',  'given' => 'ななみ']],
-                        ['en-Latn', ['family' => 'Nishi', 'given' => 'Nanami']],
-                    ],
-                    [
-                        ['ja-Jpan', ['nick_name' => 'ななぴ']],
-                        ['en-Latn', ['nick_name' => 'Nanapi']],
-                    ],
-                    '1996-10-09',
-                    [],
-                    'http://ameblo.jp/2zicon/theme-10083290730.html',
-                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/nishi-600x620.jpg'],
-                    new TwitterAccount('2653106774', 'nishi_nanami'),
-                    null
-                ),
-                new Member(
-                    [
                         ['ja-Jpan', ['family' => '根本',    'given' => '凪']],
                         ['ja-Hira', ['family' => 'ねもと',  'given' => 'なぎ']],
                         ['en-Latn', ['family' => 'Nemoto',  'given' => 'Nagi']],
@@ -287,23 +234,6 @@ class Member
                     'http://ameblo.jp/2zicon/theme-10083290734.html',
                     ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/matoba-600x620.jpg'],
                     new TwitterAccount('2653077656', 'matoba_karin'),
-                    null
-                ),
-                new Member(
-                    [
-                        ['ja-Jpan', ['family' => '吉村',      'given' => '菜々']],
-                        ['ja-Hira', ['family' => 'よしむら',  'given' => 'なな']],
-                        ['en-Latn', ['family' => 'Yoshimura', 'given' => 'Nana']],
-                    ],
-                    [
-                        ['ja-Jpan', ['nick_name' => 'なぁな']],
-                        ['en-Latn', ['nick_name' => 'Naana']],
-                    ],
-                    '1999-08-02',
-                    [],
-                    'http://ameblo.jp/2zicon/theme-10083290737.html',
-                    ['http://pixiv-pro.com/2zicon/wp-content/uploads/2014/07/yoshimura-600x620.jpg'],
-                    new TwitterAccount('2653087986', 'yoshimura_nana'),
                     null
                 ),
                 new Member(
