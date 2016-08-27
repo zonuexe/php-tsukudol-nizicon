@@ -4,17 +4,19 @@ use Teto\HTTP;
 
 include_once __DIR__ . '/../bootstrap.php';
 
+error_reporting(E_ALL);
+
 $is_ja = HTTP\AcceptLanguage::detect(function ($tag) { return $tag['language'] == 'ja'; }, false);
 
 if ($is_ja) {
-    $lang_lame = 'ja-JP';
+    $lang_name = 'ja-JP';
     $lang_tag  = 'ja-Jpan';
     $title = '虹のコンキスタドール (Niji no Conquistador)';
     $toc   = 'メンバー一覧';
     $birthday = '誕生日';
     $date_format = 'Y年n月j日';
 } else {
-    $lang_lame = 'en';
+    $lang_name = 'en';
     $lang_tag  = 'en';
     $title = 'Niji no Conquistador (虹のコンキスタドール)';
     $toc   = 'List of members';
