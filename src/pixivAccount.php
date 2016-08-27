@@ -4,7 +4,6 @@ namespace Tsukudol;
 /**
  * pixiv Account
  *
- * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
  *

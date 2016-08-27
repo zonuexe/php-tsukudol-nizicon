@@ -2,11 +2,9 @@
 
 namespace Tsukudol;
 
-
 /**
  * TranslatedString
  *
- * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
  */

@@ -6,7 +6,6 @@ use Tsukudol\Nizicon;
 /**
  * Niji No Conquistador
  *
- * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
  */

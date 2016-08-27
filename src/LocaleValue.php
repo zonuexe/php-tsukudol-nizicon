@@ -1,4 +1,5 @@
 <?php
+
 namespace Tsukudol;
 
 use Teto\HTTP\AcceptLanguage;
@@ -6,7 +7,6 @@ use Teto\HTTP\AcceptLanguage;
 /**
  * Abstract class of translated content
  *
- * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
  */

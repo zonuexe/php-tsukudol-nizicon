@@ -1,5 +1,7 @@
 <?php
+
 namespace Tsukudol\Nizicon;
+
 use Tsukudol\LocaleName;
 use Tsukudol\LocaleNickname;
 use Tsukudol\TwitterAccount;
@@ -8,7 +10,6 @@ use Tsukudol\pixivAccount;
 /**
  * Member of Niji No Conquistador
  *
- * @package Tsukudol
  * @author  tadsan@zonu.me
  * @license MIT
  *
